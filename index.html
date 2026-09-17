@@ -80,21 +80,26 @@
     color:#D6E3EE;
   }
 
-  .avatar{
-    width:132px;
-    height:132px;
-    border-radius:50%;
-    border:4px solid var(--gold);
-    background:#123A63;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'Barlow Condensed', sans-serif;
-    font-size:2.4rem;
-    font-weight:600;
-    color:#fff;
-    flex-shrink:0;
-  }
+/* Contenedor circular con borde y sombra */
+.avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  overflow: hidden; /* Esto recorta cualquier parte de la foto que se salga del círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Regla para que la imagen dentro del círculo se ajuste sin estirarse */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Centra y recorta la foto automáticamente para llenar el círculo */
+}
 
   .wave{
     position:absolute;
@@ -386,6 +391,7 @@
       <h1>Felipe de Jesus<br><span>Luis Rios</span></h1>
       <p class="role">Process Improvement · Resource Prioritization · Excel · SQL · Power BI · Python</p>
     </div>
+    <div class="avatar">
 <img src="1693539783230.jpg" alt="Felipe de Jesus Luis Rios" class="avatar-img">
   </div>
 
