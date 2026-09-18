@@ -80,26 +80,21 @@
     color:#D6E3EE;
   }
 
-/* Contenedor circular con borde y sombra */
-.avatar {
-  width: 132px;
-  height: 132px;
-  border-radius: 50%;
-  border: 4px solid var(--gold);
-  overflow: hidden; /* Esto recorta cualquier parte de la foto que se salga del círculo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Regla para que la imagen dentro del círculo se ajuste sin estirarse */
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Centra y recorta la foto automáticamente para llenar el círculo */
-}
+  .avatar{
+    width:132px;
+    height:132px;
+    border-radius:50%;
+    border:4px solid var(--gold);
+    background:#123A63;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:2.4rem;
+    font-weight:600;
+    color:#fff;
+    flex-shrink:0;
+  }
 
   .wave{
     position:absolute;
@@ -391,7 +386,6 @@
       <h1>Felipe de Jesus<br><span>Luis Rios</span></h1>
       <p class="role">Process Improvement · Resource Prioritization · Excel · SQL · Power BI · Python</p>
     </div>
-    <div class="avatar">
 <img src="1693539783230.jpg" alt="Felipe de Jesus Luis Rios" class="avatar-img">
   </div>
 
@@ -488,11 +482,8 @@
           <li>Translated analytical insights into actionable business strategies for route optimization and digital adoption growth.</li>
         </ul>
         <div class="stack">SQL · Python (pandas) · Looker Studio · SQLite</div>
-        <!-- Enlace activo hacia Looker Studio -->
-        <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap;">
-    <a class="project-link" href="https://datastudio.google.com/s/uzhfaU8lF34" target="_blank" rel="noopener">View Interactive Dashboard →</a>
-    <a class="project-link" href="https://github.com/FelipeRios031101/digital-adoption-route-prioritization" target="_blank" rel="noopener">View GitHub Repository →</a>
-  </div>
+        <!-- Enlace a la página propia del portafolio con el dashboard embebido -->
+        <a class="project-link" href="dashboard.html">View interactive dashboard →</a>
       </div>
 
       <!-- PROYECTO 2: En preparación (Enlace comentado) -->

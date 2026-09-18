@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Adoption &amp; Route Prioritization — Interactive Dashboard | Felipe Rios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2A4D;
+    --navy-deep:#081F3A;
+    --blue:#1E6FA8;
+    --blue-light:#3D8FC9;
+    --gold:#C98A2C;
+    --bg:#F2F5F8;
+    --card:#FFFFFF;
+    --muted:#5B6472;
+    --text:#16222F;
+    --line:#E1E6EB;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    font-size:15.5px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  .icon{width:18px;height:18px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.8;}
+
+  header.hero{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#fff;
+    padding:36px 40px 46px;
+  }
+
+  .hero-inner{
+    max-width:1100px;
+    margin:0 auto;
+  }
+
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:#9FC4E3;
+    margin-bottom:18px;
+  }
+
+  .back-link:hover{color:#fff;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.06em;
+    color:#9FC4E3;
+    margin-bottom:10px;
+  }
+
+  h1{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    font-size:2.3rem;
+    line-height:1.1;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+  }
+
+  .role{
+    margin-top:10px;
+    font-size:1rem;
+    color:#D6E3EE;
+    max-width:720px;
+  }
+
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:40px 40px 80px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:26px 28px;
+    margin-bottom:28px;
+  }
+
+  .card h2{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:12px;
+  }
+
+  .card p{
+    color:var(--text);
+    font-size:0.95rem;
+    margin-bottom:10px;
+  }
+
+  .card p:last-child{margin-bottom:0;}
+
+  .card .stack{
+    margin-top:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    color:var(--muted);
+  }
+
+  .tag-cloud{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .tag{
+    background:#EAF1F7;
+    color:var(--navy);
+    font-size:0.78rem;
+    padding:5px 11px;
+    border-radius:20px;
+    font-weight:500;
+  }
+
+  /* Responsive iframe wrapper — keeps a 4:3 aspect ratio */
+  .dashboard-frame-wrap{
+    position:relative;
+    width:100%;
+    padding-top:75%; /* 4:3 */
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 4px 18px rgba(11,42,77,0.08);
+    background:#fff;
+  }
+
+  .dashboard-frame-wrap iframe{
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    border:0;
+  }
+
+  .note{
+    font-size:0.82rem;
+    color:var(--muted);
+    margin-top:12px;
+  }
+
+  footer{
+    background:var(--navy);
+    color:#fff;
+    padding:32px 40px;
+    text-align:center;
+    font-size:0.85rem;
+  }
+
+  footer a{border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:2px;}
+
+  @media (max-width:820px){
+    h1{font-size:1.8rem;}
+    main{padding:28px 20px 60px;}
+    .card{padding:20px;}
+    .dashboard-frame-wrap{padding-top:130%;} /* taller on mobile so the report is still readable */
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <a class="back-link" href="index.html">← Back to portfolio</a>
+    <div class="eyebrow">FEATURED PROJECT · INTERACTIVE DASHBOARD</div>
+    <h1>Digital Adoption &amp; Route Prioritization</h1>
+    <p class="role">A weighted scoring model and executive dashboard suite built to prioritize commercial routes by their digital-adoption gap, with a client-universe drill-down and a funnel view of the onboarding journey per route.</p>
+  </div>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>About this tool</h2>
+    <p>This dashboard prioritizes commercial routes based on how far their customer base is from full digital adoption. Each route gets a weighted priority score built from four adoption stages: not registered, registered but inactive, hybrid usage, and fully digital.</p>
+    <p>Selecting a route surfaces its full customer universe and a funnel chart showing exactly where the drop-off concentrates along the adoption journey — a design choice drawn from my background in CRM and inside sales, where spotting the bottleneck stage matters more than the aggregate number.</p>
+    <p>Data has been fully anonymized. Company name, region labels, and customer names are fictional; the underlying structure and proportions reflect a real commercial dataset.</p>
+    <div class="stack">SQL · Python (pandas) · Looker Studio</div>
+    <div class="tag-cloud">
+      <span class="tag">Weighted Scoring Model</span>
+      <span class="tag">Route Prioritization</span>
+      <span class="tag">Customer Segmentation</span>
+      <span class="tag">Funnel Analysis</span>
+      <span class="tag">Drill-down Filtering</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Interactive dashboard</h2>
+    <div class="dashboard-frame-wrap">
+      <iframe
+        src="https://datastudio.google.com/embed/reporting/252e3b11-e656-4dc8-85ed-8605f0c7c4fc/page/p_3n44hq5h7d"
+        frameborder="0"
+        allowfullscreen
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+        title="Digital Adoption & Route Prioritization — Looker Studio Dashboard">
+      </iframe>
+    </div>
+    <p class="note">Use the route selector inside the dashboard to filter the table, gauge, and drill down into a route's customer universe and adoption funnel.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>Felipe de Jesus Luis Rios — <a href="mailto:felipedejesusluisrios@gmail.com">felipedejesusluisrios@gmail.com</a> · <a href="https://www.linkedin.com/in/felipe-de-jesus-luis-rios-0b1917266" target="_blank" rel="noopener">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>
